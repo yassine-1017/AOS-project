@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <div class="left">
+        <button onclick="toggleSidebar()">☰</button>
+        <span class="logo">Table Reservation System</span>
+    </div>
+
+    <div class="right">
+        <div class="user-menu" onclick="toggleUserMenu()">
+            Welcome, <span id="username"></span> ▼
+        </div>
+
+        <div id="userDropdown" class="dropdown">
+            <p id="userInfo"></p>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+</div>
+
+<!-- SIDEBAR -->
+<div id="sidebar" class="sidebar">
+    <button onclick="goToTables()">View Tables</button>
+    <button onclick="goToReservations()">My Reservations</button>
+
+    <div class="sidebar-bottom">
+        <button onclick="logout()">Logout</button>
+    </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<<div class="main">
+
+    <h2>Dashboard</h2>
+
+    <div class="cards">
+
+        <div class="card-box" onclick="goToTables()">
+            <h3>🍽️ View Tables</h3>
+            <p>Browse available tables and restaurants</p>
+        </div>
+
+        <div class="card-box" onclick="goToReservations()">
+            <h3>📅 My Reservations</h3>
+            <p>Check and manage your bookings</p>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+<script>
+    checkAuth();
+</script>
+
+</body>
+</html>
